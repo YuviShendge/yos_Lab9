@@ -7,6 +7,13 @@ def encode_password(password):
         encoded += dig
     return encoded
 
+def decode_password(password):
+    decoded = ""
+    for digit in password:
+        dig = str(int(digit) - 3)
+        decoded += dig
+    return decoded
+
 
 def main():
     while True:
@@ -21,7 +28,7 @@ def main():
             decode = (input("Please enter your password to encode: "))
             print("Your password has been encoded and stored!")
         if choice == 2:
-               print(f"The encoded password is: {encode_password(decode)}, and the original password is {decode}")
+               print(f"The encoded password is: {encode_password(decode)}, and the original password is {decode_password(encode_password(decode))}")
         if choice == 3:
             break
 
